@@ -41,6 +41,7 @@ make_wrapper() {
 	fi
 
 	echo "#!/usr/bin/env bash" >"$wrapper"
+	echo "set -e" >>"$wrapper"
 
 	params=("$@")
 	for ((n = 2; n < ${#params[*]}; n += 1)); do
